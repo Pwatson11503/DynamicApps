@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Drink Timer"
+        android:text="@string/drink_timer"
         android:textSize="34sp" />
 
     <Button
@@ -18,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="To Home Page"/>
+        android:text="@string/to_home_page"/>
 
     <EditText
         android:id="@+id/drink_edit_text_input"
@@ -26,11 +25,11 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textDrinkTimer"
         android:layout_centerHorizontal="true"
-        android:hint="Minutes"
-        android:hintTextColor="#78909C"
+        android:hint="@string/minutes"
         android:inputType="number"
         android:maxLength="4"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:importantForAutofill="no"/>
 
     <Button
         android:id="@+id/drink_button_set"
@@ -38,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/drink_edit_text_input"
         android:layout_toEndOf="@+id/drink_edit_text_input"
-        android:text="Set" />
+        android:text="@string/set" />
 
     <TextView
         android:id="@+id/textDrinkTimer"
@@ -47,7 +46,7 @@
         android:layout_centerInParent="true"
         android:layout_marginStart="121dp"
         android:layout_marginTop="10dp"
-        android:text="00:00"
+        android:text="@string/Timer_String"
         android:textColor="@android:color/black"
         android:textSize="60sp" />
 
@@ -58,7 +57,7 @@
         android:layout_below="@+id/textDrinkTimer"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="20dp"
-        android:text="Start" />
+        android:text="@string/start" />
 
     <Button
         android:id="@+id/drink_button_reset"
@@ -66,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/drink_button_start_pause"
         android:layout_toEndOf="@+id/drink_button_start_pause"
-        android:text="Reset"
+        android:text="@string/reset"
         android:visibility="invisible"
         tools:visibility="visible" />
 

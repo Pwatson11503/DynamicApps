@@ -19,7 +19,6 @@ public class FoodTimer extends AppCompatActivity {
     private EditText mFoodEditTextInput;
     private TextView mTextViewFoodTimer;
 
-    private Button mHomePageButton;
     private Button mButtonSet;
     private Button mButtonStartPause;
     private Button mButtonReset;
@@ -27,6 +26,7 @@ public class FoodTimer extends AppCompatActivity {
     private CountDownTimer mFoodCountDownTimer;
 
     private boolean mFoodTimerRunning;
+    private boolean mFoodTimerFinished;
 
     private long mFoodStartTimeInMillis;
     private long mFoodTimeLeftInMillis;
@@ -36,6 +36,8 @@ public class FoodTimer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_timer);
+
+        Button mHomePageButton;
 
         mHomePageButton = (Button)findViewById(R.id.to_home_page);
         mHomePageButton.setOnClickListener(view -> openHomePage());
@@ -93,10 +95,12 @@ public class FoodTimer extends AppCompatActivity {
             @Override
             public void onFinish() {
                 mFoodTimerRunning = false;
+                mFoodTimerFinished = true;
                 updateWatchInterface();
             }
         }.start();
         mFoodTimerRunning = true;
+        mFoodTimerFinished = false;
         updateWatchInterface();
     }
 
@@ -108,6 +112,7 @@ public class FoodTimer extends AppCompatActivity {
 
     private void resetTimer(){
         mFoodTimeLeftInMillis = mFoodStartTimeInMillis;
+        mFoodTimerFinished = false;
         updateCountdownText();
         updateWatchInterface();
     }
@@ -201,6 +206,7 @@ public class FoodTimer extends AppCompatActivity {
             if(mFoodTimeLeftInMillis < 0){
                 mFoodTimeLeftInMillis = 0;
                 mFoodTimerRunning = false;
+
                 updateCountdownText();
                 updateWatchInterface();
             }else{
