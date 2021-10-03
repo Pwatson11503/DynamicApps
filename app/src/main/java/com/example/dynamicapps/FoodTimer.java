@@ -19,7 +19,6 @@ public class FoodTimer extends AppCompatActivity {
     private EditText mFoodEditTextInput;
     private TextView mTextViewFoodTimer;
 
-    private Button mHomePageButton;
     private Button mButtonSet;
     private Button mButtonStartPause;
     private Button mButtonReset;
@@ -36,6 +35,8 @@ public class FoodTimer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_timer);
+
+        Button mHomePageButton;
 
         mHomePageButton = (Button)findViewById(R.id.to_home_page);
         mHomePageButton.setOnClickListener(view -> openHomePage());
