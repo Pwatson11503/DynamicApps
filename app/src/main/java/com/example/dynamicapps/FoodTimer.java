@@ -26,6 +26,7 @@ public class FoodTimer extends AppCompatActivity {
     private CountDownTimer mFoodCountDownTimer;
 
     private boolean mFoodTimerRunning;
+    private boolean mFoodTimerFinished;
 
     private long mFoodStartTimeInMillis;
     private long mFoodTimeLeftInMillis;
@@ -94,10 +95,12 @@ public class FoodTimer extends AppCompatActivity {
             @Override
             public void onFinish() {
                 mFoodTimerRunning = false;
+                mFoodTimerFinished = true;
                 updateWatchInterface();
             }
         }.start();
         mFoodTimerRunning = true;
+        mFoodTimerFinished = false;
         updateWatchInterface();
     }
 
@@ -109,6 +112,7 @@ public class FoodTimer extends AppCompatActivity {
 
     private void resetTimer(){
         mFoodTimeLeftInMillis = mFoodStartTimeInMillis;
+        mFoodTimerFinished = false;
         updateCountdownText();
         updateWatchInterface();
     }
@@ -202,6 +206,7 @@ public class FoodTimer extends AppCompatActivity {
             if(mFoodTimeLeftInMillis < 0){
                 mFoodTimeLeftInMillis = 0;
                 mFoodTimerRunning = false;
+
                 updateCountdownText();
                 updateWatchInterface();
             }else{
