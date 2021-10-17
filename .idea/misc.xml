@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Preston/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/activity_calendar_view.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Preston/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/activity_daily_intake_tracker.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Preston/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/activity_drink_timer.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Preston/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/activity_food_timer.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Preston/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Preston/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/activity_meal_info_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Preston/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/activity_set_up_wizard.xml" value="0.33" />
+        <entry key="..\:/Users/Preston/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/activity_tracker_details.xml" value="0.33" />
+        <entry key="..\:/Users/Preston/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/list_row.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/pwats/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/activity_drink_timer.xml" value="0.22" />
         <entry key="..\:/Users/pwats/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/activity_food_timer.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/pwats/AndroidStudioProjects/DynamicApps/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />

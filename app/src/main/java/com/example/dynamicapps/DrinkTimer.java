@@ -37,8 +37,7 @@ public class DrinkTimer extends AppCompatActivity {
         setContentView(R.layout.activity_drink_timer);
         Button mHomePageButton;
 
-
-        mHomePageButton = (Button)findViewById(R.id.to_home_page);
+        mHomePageButton = findViewById(R.id.to_home_page);
         mHomePageButton.setOnClickListener(view -> openHomePage());
 
         mDrinkEditTextInput = findViewById(R.id.drink_edit_text_input);

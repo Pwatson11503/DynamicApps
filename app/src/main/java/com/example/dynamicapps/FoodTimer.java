@@ -39,7 +39,7 @@ public class FoodTimer extends AppCompatActivity {
 
         Button mHomePageButton;
 
-        mHomePageButton = (Button)findViewById(R.id.to_home_page);
+        mHomePageButton = findViewById(R.id.to_home_page);
         mHomePageButton.setOnClickListener(view -> openHomePage());
 
         mFoodEditTextInput = findViewById(R.id.food_edit_text_input);
