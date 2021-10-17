@@ -11,33 +11,4 @@
     <string name="homepage">Homepage</string>
     <string name="open_drink_timer">Open Drink Timer</string>
     <string name="open_food_timer">Open Food Timer</string>
-    <string name="title_activity_tracker_details">TrackerDetails</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="meal_name">Meal Name</string>
-    <string name="food_items">Food Items</string>
-    <string name="date_text">Date Text</string>
-    <string name="calories">Calories</string>
-    <string name="calories_count">Calories Count</string>
-    <string name="carbs">Carbs</string>
-    <string name="carbs_count">Carbs Count</string>
-    <string name="protein">Protein</string>
-    <string name="protein_count">Protein Count</string>
-    <string name="hasChild"><![CDATA[>]]></string>
-    <string name="MealNumber">What meal number is this?</string>
-    <string name="hintFoodItems">What did you eat in the meal?</string>
-    <string name="Calories">Total Calories of the meal?</string>
-    <string name="Protein">Total Protein? (Grams)</string>
-    <string name="Carbs">Total Carbs? (Grams)</string>
-    <string name="submitButton">Submit</string>
-    <string name="open_meal_info">Open Meal Info</string>
-    <string name="open_meal_input">Open Meal Input</string>
-    <string name="meal_info">Meal Info</string>
-    <string name="timers">Timers</string>
 </resources>

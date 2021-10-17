@@ -10,17 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DynamicApps">
         <activity
-            android:name=".MealInfo.MealInfoMain"
-            android:exported="true" />
-        <activity
-            android:name=".MealInfo.TrackerDetails"
-            android:exported="true"
-            android:label="@string/title_activity_tracker_details"
-            android:theme="@style/Theme.DynamicApps.NoActionBar" />
-        <activity
-            android:name=".SetUpWizard"
-            android:exported="true" />
-        <activity
             android:name=".FoodTimer"
             android:exported="true" />
         <activity
