@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/homePageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/homepage"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        tools:ignore="RelativeOverlap" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:text="@string/timers"
+        android:textSize="40sp"
+        android:translationY="300dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="@string/meal_info"
+        android:textSize="40sp"
+        android:translationY="300dp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/drinkTimerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/open_drink_timer"
+        android:layout_alignParentStart="true"
+        android:translationY="350dp" />
+
+    <Button
+        android:id="@+id/foodTimerButton"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:text="@string/open_food_timer"
+        android:layout_alignParentStart="true"
+        android:translationY="420dp" />
+    <Button
+        android:id="@+id/mealInputButton"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:text="@string/open_meal_input"
+        android:layout_alignParentEnd="true"
+        android:translationY="350dp" />
+    <Button
+        android:id="@+id/mealInfoButton"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:text="@string/open_meal_info"
+        android:layout_alignParentEnd="true"
+        android:translationY="420dp" />
+</RelativeLayout>
