@@ -1,4 +1,4 @@
-package com.example.dynamicapps;
+package com.example.dynamicapps.Timer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.dynamicapps.MainActivity;
+import com.example.dynamicapps.R;
 
 import java.util.Locale;
 

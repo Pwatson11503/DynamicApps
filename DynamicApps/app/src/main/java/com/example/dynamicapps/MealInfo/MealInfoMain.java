@@ -16,7 +16,7 @@ import com.example.dynamicapps.R;
 
 public class MealInfoMain extends AppCompatActivity {
 
-    private EditText mealNumber, foodItems, caloriesInput, proteinInput, carbsInput;
+    private EditText foodItems, caloriesInput, proteinInput, cholInput;
     private Button submitButton;
     private DatabaseHandler dba;
 
@@ -32,11 +32,10 @@ public class MealInfoMain extends AppCompatActivity {
         mHomePageButton.setOnClickListener(view -> openHomePage());
 
         dba = new DatabaseHandler(MealInfoMain.this);
-        mealNumber = findViewById(R.id.MealNumber);
         foodItems = findViewById(R.id.FoodItems);
         caloriesInput = findViewById(R.id.CaloriesInput);
         proteinInput = findViewById(R.id.ProteinInput);
-        carbsInput = findViewById(R.id.CarbsInput);
+        cholInput = findViewById(R.id.CholInput);
         submitButton = findViewById(R.id.SubmitButton);
 
         submitButton.setOnClickListener(view -> saveDataToDatabase());
@@ -49,33 +48,29 @@ public class MealInfoMain extends AppCompatActivity {
 
     private void saveDataToDatabase(){
         Food food = new Food();
-        String mealString = mealNumber.getText().toString().trim();
         String foodString = foodItems.getText().toString().trim();
         String calString = caloriesInput.getText().toString().trim();
-        String carbsString = carbsInput.getText().toString().trim();
+        String cholString = cholInput.getText().toString().trim();
         String proteinString = proteinInput.getText().toString().trim();
 
-        if(mealString.isEmpty() || foodString.isEmpty() || calString.isEmpty() || carbsString.isEmpty() || proteinString.isEmpty()){
+        if(foodString.isEmpty() || calString.isEmpty() || cholString.isEmpty() || proteinString.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please enter a value.", Toast.LENGTH_LONG).show();
         }else{
-            int mealInt = Integer.parseInt(mealString);
             int calInt = Integer.parseInt(calString);
-            int carbInt = Integer.parseInt(carbsString);
+            int cholInt = Integer.parseInt(cholString);
             int proteinInt = Integer.parseInt(proteinString);
 
-            food.setMealNumber(mealInt);
             food.setFoodItems(foodString);
             food.setCalories(calInt);
-            food.setCarbs(carbInt);
+            food.setCholesterol(cholInt);
             food.setProtein(proteinInt);
 
             dba.addFood(food);
             dba.close();
 
-            mealNumber.setText("");
             foodItems.setText("");
             caloriesInput.setText("");
-            carbsInput.setText("");
+            cholInput.setText("");
             proteinInput.setText("");
 
             openTrackerDetails();

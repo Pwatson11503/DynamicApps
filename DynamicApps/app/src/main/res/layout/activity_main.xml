@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+     TODO Change buttons to Floating Action buttons with corresponding icons.
+     TODO Add tablayout at bottom of view for switching between components.
+     TODO DOCUMENT EVERYTHING*******************
+     TODO Create Logic for when water timer needs to stop before eating.
+     TODO Change MealInput - Remove Meal Number and instead use the Date (Year, Month, Day, Hour, Minute, Second) **DONE**
+     FIXME MealInput page needs to have larger text for visibility. **DONE**
+     FIXME Change Carbs with Cholesterol. **DONE**
+
+-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -62,4 +72,16 @@
         android:text="@string/open_meal_info"
         android:layout_alignParentEnd="true"
         android:translationY="420dp" />
+
+    <Button
+        android:id="@+id/calendarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="150dp"
+        android:text="Calendar" />
+
 </RelativeLayout>
