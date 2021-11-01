@@ -43,19 +43,17 @@ public class TrackerDetails extends AppCompatActivity {
         ArrayList<Food> foodsFromDB = dba.getAllFood();
 
         for (int i = 0; i < foodsFromDB.size(); i++) {
-            int mealNumber = foodsFromDB.get(i).getMealNumber();
             String foodItems = foodsFromDB.get(i).getFoodItems();
             int calories = foodsFromDB.get(i).getCalories();
-            int carbs = foodsFromDB.get(i).getCarbs();
+            int chol = foodsFromDB.get(i).getCholesterol();
             int protein = foodsFromDB.get(i).getProtein();
             String date = foodsFromDB.get(i).getRecordDate();
             int foodId = foodsFromDB.get(i).getFoodId();
 
             myFood = new Food();
-            myFood.setMealNumber(mealNumber);
             myFood.setFoodItems(foodItems);
             myFood.setCalories(calories);
-            myFood.setCarbs(carbs);
+            myFood.setCholesterol(chol);
             myFood.setProtein(protein);
             myFood.setRecordDate(date);
             myFood.setFoodId(foodId);

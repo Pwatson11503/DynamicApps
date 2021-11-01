@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DynamicApps">
         <activity
+            android:name=".Calendar.Weekly.EventEditActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Calendar.Weekly.WeekViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Calendar.MainCalendar"
+            android:exported="true" />
+        <activity
+            android:name=".MedicineReminder.AddReminderActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MedicineReminder.MedicineReminderMain"
+            android:exported="true" />
+        <activity
             android:name=".MealInfo.MealInfoMain"
             android:exported="true" />
         <activity
@@ -21,10 +36,10 @@
             android:name=".SetUpWizard"
             android:exported="true" />
         <activity
-            android:name=".FoodTimer"
+            android:name=".Timer.FoodTimer"
             android:exported="true" />
         <activity
-            android:name=".DrinkTimer"
+            android:name=".Timer.DrinkTimer"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

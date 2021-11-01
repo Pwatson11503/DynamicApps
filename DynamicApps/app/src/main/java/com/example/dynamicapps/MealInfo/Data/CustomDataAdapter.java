@@ -58,10 +58,9 @@ public class CustomDataAdapter extends ArrayAdapter<Food> {
             LayoutInflater inflater = LayoutInflater.from(activity);
             row = inflater.inflate(layoutResource, null);
             holder = new ViewHolder();
-            holder.foodMeal = row.findViewById(R.id.mealName);
             holder.foodItems = row.findViewById(R.id.foodList);
             holder.foodCalories = row.findViewById(R.id.calories);
-            holder.foodCarbs = row.findViewById(R.id.carbs);
+            holder.foodChol = row.findViewById(R.id.cholesterol);
             holder.foodProtein = row.findViewById(R.id.protein);
             holder.foodDate = row.findViewById(R.id.dateText);
 
@@ -72,10 +71,9 @@ public class CustomDataAdapter extends ArrayAdapter<Food> {
 
         holder.food = getItem(position);
         assert holder.food != null;
-        holder.foodMeal.setText(String.valueOf(holder.food.getMealNumber()));
         holder.foodItems.setText(String.valueOf(holder.food.getFoodItems()));
         holder.foodCalories.setText(String.valueOf(holder.food.getCalories()));
-        holder.foodCarbs.setText(String.valueOf(holder.food.getCarbs()));
+        holder.foodChol.setText(String.valueOf(holder.food.getCholesterol()));
         holder.foodProtein.setText(String.valueOf(holder.food.getProtein()));
         holder.foodDate.setText(String.valueOf(holder.food.getRecordDate()));
 
@@ -84,6 +82,6 @@ public class CustomDataAdapter extends ArrayAdapter<Food> {
 
     public class ViewHolder{
         Food food;
-        TextView foodMeal, foodItems, foodCalories, foodCarbs, foodProtein, foodDate;
+        TextView foodItems, foodCalories, foodChol, foodProtein, foodDate;
     }
 }

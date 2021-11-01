@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import com.example.dynamicapps.MealInfo.Model.Food;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -27,10 +28,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String CREATE_TABLE = " CREATE TABLE " + Constants.TABLE_NAME + "("
                 + Constants.KEY_ID + " INTEGER PRIMARY KEY, "
-                + Constants.MEAL_NUMBER + " INT, "
                 + Constants.FOOD + " TEXT, "
                 + Constants.CALORIES + " INT, "
-                + Constants.CARBS + " INT, "
+                + Constants.CHOLS + " INT, "
                 + Constants.PROTEIN + " INT, "
                 + Constants.DATE_ADDED + " LONG );";
 
@@ -46,12 +46,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     //Add Food Method
     public void addFood(Food food){
         SQLiteDatabase database = this.getWritableDatabase();
+
         ContentValues values = new ContentValues();
 
-        values.put(Constants.MEAL_NUMBER, food.getMealNumber());
         values.put(Constants.FOOD, food.getFoodItems());
         values.put(Constants.CALORIES, food.getCalories());
-        values.put(Constants.CARBS, food.getCarbs());
+        values.put(Constants.CHOLS, food.getCholesterol());
         values.put(Constants.PROTEIN, food.getProtein());
         values.put(Constants.DATE_ADDED, System.currentTimeMillis());
 
@@ -63,17 +63,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public ArrayList<Food> getAllFood(){
         foodList.clear();
         SQLiteDatabase dba = this.getReadableDatabase();
+
+
         Cursor cursor = dba.query(Constants.TABLE_NAME,
-                new String[]{Constants.KEY_ID, Constants.MEAL_NUMBER, Constants.FOOD,
-                        Constants.CALORIES, Constants.CARBS, Constants.PROTEIN, Constants.DATE_ADDED},
+                new String[]{Constants.KEY_ID, Constants.FOOD,
+                        Constants.CALORIES, Constants.CHOLS, Constants.PROTEIN, Constants.DATE_ADDED},
                 null, null, null, null, Constants.DATE_ADDED + " DESC ");
 
         if (cursor.moveToFirst()) {
             do {
                 Food food = new Food();
-                int meal_number = cursor.getColumnIndex(Constants.MEAL_NUMBER);
-                food.setMealNumber(cursor.getInt(meal_number));
-                //food.setMealNumber(cursor.getInt(cursor.getColumnIndex(Constants.MEAL_NUMBER)));
 
                 int food_items = cursor.getColumnIndex(Constants.FOOD);
                 food.setFoodItems(cursor.getString(food_items));
@@ -83,9 +82,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 food.setCalories(cursor.getInt(calories));
                 //food.setCalories(cursor.getInt(cursor.getColumnIndex(Constants.CALORIES)));
 
-                int carbs = cursor.getColumnIndex(Constants.CARBS);
-                food.setCarbs(cursor.getInt(carbs));
-                //food.setCarbs(cursor.getInt(cursor.getColumnIndex(Constants.CARBS)));
+                int chol = cursor.getColumnIndex(Constants.CHOLS);
+                food.setCholesterol(cursor.getInt(chol));
 
                 int protein = cursor.getColumnIndex(Constants.PROTEIN);
                 food.setProtein(cursor.getInt(protein));
@@ -95,7 +93,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 food.setFoodId(cursor.getInt(keyId));
                 //food.setFoodId(cursor.getInt(cursor.getColumnIndex(Constants.KEY_ID)));
 
-                DateFormat dateFormat = DateFormat.getDateInstance();
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 int dateColIndex = cursor.getColumnIndex(Constants.DATE_ADDED);
                 String date = dateFormat.format(new Date(cursor.getLong(dateColIndex)).getTime());
                 food.setRecordDate(date);

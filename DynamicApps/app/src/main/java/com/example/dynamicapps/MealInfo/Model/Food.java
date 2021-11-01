@@ -6,29 +6,20 @@ import java.io.Serializable;
 public class Food implements Serializable{
     private String foodItems, recordDate;
     private int calories;
-    private int carbs;
+    private int cholesterol;
     private int protein;
     private int foodId;
-    private int mealNumber;
     private static final long serialVersionID = 10L;
 
     public Food(){}
 
-    public Food(String foodItems, String recordDate, int calories, int carbs, int protein, int foodId, int mealNumber){
+    public Food(String foodItems, String recordDate, int calories, int cholesterol, int protein, int foodId){
         this.foodItems = foodItems;
         this.recordDate = recordDate;
         this.calories = calories;
-        this.carbs = carbs;
+        this.cholesterol = cholesterol;
         this.protein = protein;
         this.foodId = foodId;
-        this.mealNumber = mealNumber;
-    }
-    public int getMealNumber() {
-        return mealNumber;
-    }
-
-    public void setMealNumber(int mealNumber) {
-        this.mealNumber = mealNumber;
     }
 
     public static long getSerialVersionID() {
@@ -59,12 +50,12 @@ public class Food implements Serializable{
         this.calories = calories;
     }
 
-    public int getCarbs() {
-        return carbs;
+    public int getCholesterol() {
+        return cholesterol;
     }
 
-    public void setCarbs(int carbs) {
-        this.carbs = carbs;
+    public void setCholesterol(int cholesterol) {
+        this.cholesterol = cholesterol;
     }
 
     public int getProtein() {

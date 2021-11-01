@@ -6,8 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.example.dynamicapps.Calendar.MainCalendar;
 import com.example.dynamicapps.MealInfo.MealInfoMain;
 import com.example.dynamicapps.MealInfo.TrackerDetails;
+import com.example.dynamicapps.Timer.DrinkTimer;
+import com.example.dynamicapps.Timer.FoodTimer;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Button foodButton;
         Button mealInputButton;
         Button mealInfoButton;
+        Button calendarButton;
 
         drinkButton = (Button)findViewById(R.id.drinkTimerButton);
         drinkButton.setOnClickListener(view -> openDrinkTimer());
@@ -28,7 +32,14 @@ public class MainActivity extends AppCompatActivity {
         mealInputButton.setOnClickListener(view -> openMealTracker());
         mealInfoButton = (Button)findViewById(R.id.mealInfoButton);
         mealInfoButton.setOnClickListener(view -> openMealInfo());
+        calendarButton = (Button)findViewById(R.id.calendarButton);
+        calendarButton.setOnClickListener(view -> openCalendarReminder());
 
+    }
+
+    private void openCalendarReminder() {
+        Intent intent = new Intent(this, MainCalendar.class);
+        startActivity(intent);
     }
 
     public void openDrinkTimer(){
